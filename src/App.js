@@ -5,7 +5,7 @@ import Footer from './Components/Footer/Footer'
 import About from './Components/About/About'
 import Welcome from './Components/Welcome/Welcome'
 import Resources from './Components/Resources/Resources'
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 const url = "http://localhost:3000/"
 
