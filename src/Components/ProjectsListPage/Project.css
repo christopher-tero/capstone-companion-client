@@ -1,0 +1,24 @@
+.project-card {
+  border: 2px outset #DDD;
+  background: #FEFEFEBE;
+  border-radius: 5px;
+  padding: 0 1rem 1rem 1rem;
+  max-width: 26%;
+  max-height: 150px;
+  margin: 1.5%;
+  overflow-y: hidden;
+  box-shadow: 4px 4px 8px #AAA9;
+}
+
+.project-card:active {
+    box-shadow: inset 1px 1px 2px #AAA9;
+}
+
+.card-container {
+  display: flex;
+  grid-column: 2 / 9;
+  grid-row-start: 4;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
+}

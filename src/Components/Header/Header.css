@@ -1,0 +1,25 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-image: url("../../images/marble-2398946_1920.jpg");
+  border-bottom: 1px outset #EEE2;
+  padding-left: 1rem;
+  box-shadow: inset 16px 16px 48px #DDD;
+  height: 2rem;
+}
+
+.logo {
+  position: absolute;
+  top: -0.9rem;
+}
+
+.nav-links {
+  position: absolute;
+  right: 2rem;
+  top: 0.3rem;
+}
+
+.nav-links span {
+  padding: 0.5rem;
+}
