@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ProjectsListPage from './Components/ProjectsListPage/ProjectsListPage'
+import Project from './Components/ProjectsListPage/Project'
 import Header from './Components/Header/Header'
 import Footer from './Components/Footer/Footer'
 import About from './Components/About/About'
@@ -36,6 +37,7 @@ export default class App extends Component {
           <Switch>
             <Route path="/" exact component={Welcome} />
             <Route path="/projects" exact component={(props) => <ProjectsListPage {...props} projects={this.state.projects} />} />
+            <Route path="/projects/:id" component={Project} />
             <Route path="/resources" component={Resources} />
             <Route path="/about" component={About} />
           </Switch>

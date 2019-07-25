@@ -1,12 +1,17 @@
 import React from 'react'
-import Project from './Project'
+import ProjectCard from './ProjectCard'
 import '../../App.css'
 import './Project.css'
 
 export default function ProjectsListPage(props) {
   const listProjects = props.projects.map((project) => {
-    console.log(project)
-    return <Project key={project.id} title={project.title} description={project.description} />
+    return <ProjectCard
+      key={project.id}
+      title={project.title}
+      description={project.description}
+      id={project.id}
+      project={project}
+    />
   })
 
   return (
