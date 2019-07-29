@@ -3,7 +3,7 @@ import './Project.css'
 import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
 
 export default function ProjectCard(props) {
-  const cutDescription = props.description.replace(/^(.{100}[^\s]*).*/, "$1")
+  const cutDescription = props.description.replace(/^(.{90}[^\s]*).*/, "$1")
   const thisProject = props.project
   return (
     <div className="project-card">

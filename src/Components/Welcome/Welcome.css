@@ -1,7 +1,38 @@
 #capstone-welcome {
-  margin: 10rem;
+  text-align: left;
+  grid-column: 2 / 5;
+  grid-row-start: 4;
+  margin-top: 2rem;
 }
 
 p {
   text-align: center;
+}
+
+.current-project {
+  grid-column: 6 / 9;
+  grid-row: 4 / 7;
+  margin-top: 3rem;
+}
+
+.current-project-card {
+  position: relative;
+  border: 2px outset #DDD;
+  background: #FEFEFEBE;
+  border-radius: 5px;
+  padding: 0 1rem 1rem 1rem;
+  min-width: 300px;
+  max-height: 160px;
+  overflow-y: hidden;
+  box-shadow: 4px 4px 8px #AAA9;
+}
+
+.current-project-card a {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+}
+
+.current-project h3 {
+  text-align: left;
 }

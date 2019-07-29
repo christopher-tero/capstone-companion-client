@@ -1,6 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto:400,700&display=swap');
+
+/* font-family: 'Alfa Slab One', cursive; */
+/* font-family: 'Roboto', sans-serif; */
+
 body {
   background: #EEE;
-  background-image: url("./images/marble-2398946_1920.jpg");
+  background-image: url("./images/claudiu-pusuc-PsZ_HXOCLIs-unsplash.jpg");
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  overflow-y: scroll;
+}
+
+.pages {
+  margin-bottom: 5rem;
 }
 
 .container {

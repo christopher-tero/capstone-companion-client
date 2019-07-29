@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer'
 import About from './Components/About/About'
 import Welcome from './Components/Welcome/Welcome'
 import Resources from './Components/Resources/Resources'
+import Login from './Components/Login/Login'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 const url = "http://localhost:3000/"
@@ -34,9 +35,10 @@ export default class App extends Component {
       <div className="App">
         <Router>
           <Header />
-          <Switch>
-            <Route path="/" exact component={Welcome} />
-            <Route path="/projects" exact component={(props) => <ProjectsListPage {...props} projects={this.state.projects} />} />
+          <Switch className="pages">
+            <Route path="/" exact component={Login} />
+            <Route path="/home" exact component={this.state.projects ? (props) => <Welcome {...props} projects={this.state.projects} /> : ""} />
+            <Route path="/projects" exact component={this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} /> : ""} />
             <Route path="/projects/:id" component={Project} />
             <Route path="/resources" component={Resources} />
             <Route path="/about" component={About} />

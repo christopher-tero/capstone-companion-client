@@ -9,3 +9,15 @@ h3 {
   grid-column: 3 / 8;
   text-align: left;
 }
+
+p {
+  text-align: left;
+}
+
+p a {
+  color: white;
+  text-shadow: 1px 1px 1px black,
+    -1px -1px 1px black,
+    1px -1px 1px black,
+    -1px 1px 1px black;
+}

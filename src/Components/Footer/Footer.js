@@ -4,8 +4,8 @@ import './Footer.css'
 
 export default function Footer() {
   return(
-    <div>
-      <Link to="/about" id="footer">About Us</Link>
+    <div id="footer">
+      <Link to="/about" id="footer-link">About Us</Link>
     </div>
   )
 }

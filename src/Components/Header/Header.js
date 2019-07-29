@@ -7,10 +7,10 @@ export default function Project() {
     <nav className="header">
       <h4 className="logo">Capstone Companion</h4>
       <div className="nav-links">
-        <span><Link to="/">Home</Link></span>
+        <span><Link to="/home">Home</Link></span>
         <span><Link to="/projects/">Projects</Link></span>
         <span><Link to="/resources/">Resources</Link></span>
-        <span><Link to="/log-out/">Log Out</Link></span>
+        <span><Link to="/">Log Out</Link></span>
       </div>
     </nav>
   )
