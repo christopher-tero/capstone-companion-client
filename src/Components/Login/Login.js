@@ -1,12 +1,7 @@
 import React, {Component} from 'react'
 import './Login.css'
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom"
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   submitHandler = (event) => {
     event.preventDefault();
     return this.props.history.push('/home/');

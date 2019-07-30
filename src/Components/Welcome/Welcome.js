@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React from 'react'
 import '../../App.css'
 import './Welcome.css'
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 export default function Welcome(props) {
   const currentProject = props.projects.find((project) => {
@@ -20,7 +20,7 @@ export default function Welcome(props) {
           <h3>{currentProject.title}</h3>
           <Link to={{
             pathname: `/projects/${currentProject.id}`,
-            state: {project: currentProject}
+            state: {project: currentProject, items: props.items}
           }}>Open Project</Link>
           <p>{currentProject.description}</p>
         </div>

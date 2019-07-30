@@ -11,6 +11,7 @@ export default function ProjectsListPage(props) {
       description={project.description}
       id={project.id}
       project={project}
+      items={props.items}
     />
   })
 

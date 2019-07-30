@@ -16,6 +16,7 @@ export default class App extends Component {
     super()
     this.state = {
       projects: undefined,
+      items: undefined,
     }
   }
 
@@ -28,6 +29,11 @@ export default class App extends Component {
       .then(response => response.json())
       .then(result => this.setState({projects: result}))
       .catch(error => console.error(error))
+    fetch(url + "items")
+      .then(response => response.json())
+      .then(result => this.setState({items: result}))
+      .catch(error => console.error(error))
+
   }
 
   render() {
@@ -37,8 +43,8 @@ export default class App extends Component {
           <Header />
           <Switch className="pages">
             <Route path="/" exact component={Login} />
-            <Route path="/home" exact component={this.state.projects ? (props) => <Welcome {...props} projects={this.state.projects} /> : ""} />
-            <Route path="/projects" exact component={this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} /> : ""} />
+            <Route path="/home" exact component={this.state.projects ? (this.state.items ? (props) => <Welcome {...props} projects={this.state.projects} items={this.state.items} /> : "") : ""} />
+            <Route path="/projects" exact component={this.state.items ? (this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} items={this.state.items} /> : "") : ""} />
             <Route path="/projects/:id" component={Project} />
             <Route path="/resources" component={Resources} />
             <Route path="/about" component={About} />
