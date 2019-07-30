@@ -1,4 +1,5 @@
 .project-card {
+  position: relative;
   border: 2px outset #DDD;
   background: #FEFEFEBE;
   border-radius: 5px;
@@ -31,11 +32,6 @@
 .card-container::-webkit-scrollbar {
     display: none;
 }
-/*
-.project {
-  grid-row-start: 3;
-  grid-column: 2 / 9;
-} */
 
 .title {
   grid-column: 2 / 4;
@@ -119,7 +115,7 @@ input[type="submit"] {
   font-size: 10pt;
 }
 
-.edit-description {
+.display-description {
   position: relative;
   bottom: 5%;
   left: 10%;
@@ -145,4 +141,10 @@ input[type="submit"] {
 #change-description {
   position: absolute;
   display: none;
+}
+
+#current {
+  position: absolute;
+  right: 1rem;
+  top: 0;
 }

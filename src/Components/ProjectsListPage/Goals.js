@@ -3,7 +3,7 @@ import React from 'react'
 export default function Goals(props) {
   const allItems = props.items
   console.log(allItems)
-  if (allItems != {}) {
+  if (allItems !== {}) {
     // props.items.forEach((item) => {
     //   console.log(item.project_id)
     // })

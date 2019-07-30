@@ -32,38 +32,21 @@ export default class Project extends Component {
       .then(this.props.fetchData)
   }
 
-  handleEdit = (event) => {
-    // let description = document.querySelector(".description")
-    // description.innerText = ""
-    // let editDescription = document.createElement("textarea")
-    // let changeButton = document.createElement("button")
-    // editDescription.className = "description-text"
-    // editDescription.value = this.state.project.description
-    // changeButton.textContent = "Change Description"
-    //
-    // description.appendChild(editDescription)
-    // description.appendChild(changeButton)
-  }
-
   handleDelete = (event) => {
-    const projectUrl = url + "/projects/" + this.state.project.id
-    fetch(projectUrl, {method: "DELETE"})
-      .then(this.props.fetchData)
+    this.props.deleteProject(this.state.project.id)
     return this.props.history.push('/home/');
   }
 
-  additionalNotes = ""
-
   handleChange = (event) => {
-    this.additionalNotes = event.target.value
+    let additionalNotes = event.target.value
+    this.setState({ project: { ...this.state.project, features: additionalNotes} })
+    console.log(additionalNotes)
   }
 
   handleNotesSubmit = (event) => {
-    event.preventDefault();
-    this.setState({ project: { ...this.state.project, features: this.additionalNotes} });
-    let newNotes = this.state.project
-    console.log(newNotes)
-    this.editNotes(newNotes);
+    event.preventDefault(event)
+    const editProject = this.state.project
+    this.props.editProject(editProject)
   }
 
   render() {
@@ -75,11 +58,6 @@ export default class Project extends Component {
         <div className="description">
           <div id="display-description">
             {this.state.project.description}
-            <button className="edit-description" onClick={this.handleEdit}>Edit Description</button>
-          </div>
-          <div id="change-description">
-            <textarea placeholder={this.state.project.description} />
-            <button className="edit-description" onclick={this.handleEdit}>Change Description</button>
           </div>
         </div>
         { this.state.items

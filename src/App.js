@@ -34,6 +34,31 @@ export default class App extends Component {
       .then(result => this.setState({items: result}))
       .catch(error => console.error(error))
   }
+  // <Route path="/projects" exact component={this.state.items ? (this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} items={this.state.items} fetchData={this.fetchData} /> : "") : ""} />
+
+  deleteProject = (id) => {
+    const filteredProjects = this.state.projects.filter(project => project.id != id)
+    this.setState({projects: filteredProjects})
+    fetch(url + "projects/" + id, {method: "DELETE"})
+  }
+
+  editProject = (editedProject) => {
+    console.log(editedProject.id)
+    const id = editedProject.id
+    fetch(url + `projects/${id}`, {
+      method: "PUT",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(editedProject)
+    })
+      .then(response => response.json())
+      .then(this.fetchData)
+  }
+
+  setEditedProject = (project) => {
+    this.setState({editedProject: project})
+  }
 
   render() {
     return (
@@ -43,8 +68,18 @@ export default class App extends Component {
           <Switch className="pages">
             <Route path="/" exact component={Login} />
             <Route path="/home" exact component={this.state.projects ? (this.state.items ? (props) => <Welcome {...props} projects={this.state.projects} items={this.state.items} fetchData={this.fetchData} /> : "") : ""} />
-            <Route path="/projects" exact component={this.state.items ? (this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} items={this.state.items} fetchData={this.fetchData} /> : "") : ""} />
-            <Route path="/projects/:id" component={Project} />
+            <Route path="/projects" exact component={(props) => <ProjectsListPage {...props}
+                projects={this.state.projects}
+                items={this.state.items}
+                delete={this.deleteProject}
+                addProject={this.addProject}
+                editProject={this.editProject}
+                editView={this.state.editProjectView}
+                setEditState={this.setEditState}
+                setEditedProject={this.setEditedProject}
+                editedProject={this.state.editedProject}
+              />} />
+            <Route path="/projects/:id" component={(props) => <Project {...props} deleteProject={this.deleteProject} editProject={this.editProject} />} />
             <Route path="/resources" component={Resources} />
             <Route path="/about" component={About} />
           </Switch>
@@ -54,23 +89,3 @@ export default class App extends Component {
     );
   }
 }
-
-
-
-// <Route path="/players/" component={(props) => <PlayerList {...props}
-// players={this.state.players}
-// delete={this.deletePerson}
-// addPerson={this.addPerson}
-// editPlayer={this.editPlayer}
-// editView={this.state.editPlayerView}
-// setEditState={this.setEditState}
-// setEditedPlayer={this.setEditedPlayer}
-// editedPlayer={this.state.editedPlayer}
-// />}
-// />
-// <Route path="/past-games/" component={(props) => <GameHistoryList {...props} games={this.state.games} />} />
-// <Route path="/past-tournaments/" component={(props) => <TournamentHistoryList {...props} tournaments={this.state.tournaments} />} />
-// <Route path="/new-game/" component={SingleGame} />
-// <Route path="/new-tournament/" component={NewTournamentForm} />
-
-// <Footer />
