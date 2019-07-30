@@ -34,7 +34,7 @@ export default class Project extends Component {
 
   handleDelete = (event) => {
     this.props.deleteProject(this.state.project.id)
-    return this.props.history.push('/home/');
+    return this.props.history.push('/projects/');
   }
 
   handleChange = (event) => {
@@ -49,6 +49,12 @@ export default class Project extends Component {
     this.props.editProject(editProject)
   }
 
+  handleCurrent = (event) => {
+    this.setState({ project: { ...this.state.project, current: true} })
+    console.log(this.state.project.current)
+    this.props.setCurrent(this.state.project.id)
+  }
+
   render() {
     return (
       <div className="container project">
@@ -58,6 +64,9 @@ export default class Project extends Component {
         <div className="description">
           <div id="display-description">
             {this.state.project.description}
+          </div>
+          <div id="set-current-button">
+            {/*<button id="set-current" onClick={this.handleCurrent}>Set to Current Project</button>*/}
           </div>
         </div>
         { this.state.items

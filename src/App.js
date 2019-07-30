@@ -6,6 +6,7 @@ import Footer from './Components/Footer/Footer'
 import About from './Components/About/About'
 import Welcome from './Components/Welcome/Welcome'
 import Resources from './Components/Resources/Resources'
+import NewProject from './Components/NewProject/NewProject'
 import Login from './Components/Login/Login'
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
@@ -60,6 +61,27 @@ export default class App extends Component {
     this.setState({editedProject: project})
   }
 
+  addProject = (project) => {
+    fetch(url + "projects", {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(project)
+    })
+    .then(response => response.json())
+    .then(this.fetchData)
+  }
+
+  setCurrent = (id) => {
+    const notCurrent = this.state.projects.filter((project) => {
+      return (project.id != id)
+    })
+    notCurrent.map((project) => {
+      this.setState({ project: { ...this.state.project, current: false} })
+    })
+  }
+
   render() {
     return (
       <div className="App">
@@ -79,8 +101,9 @@ export default class App extends Component {
                 setEditedProject={this.setEditedProject}
                 editedProject={this.state.editedProject}
               />} />
-            <Route path="/projects/:id" component={(props) => <Project {...props} deleteProject={this.deleteProject} editProject={this.editProject} />} />
+            <Route path="/projects/:id" component={(props) => <Project {...props} deleteProject={this.deleteProject} editProject={this.editProject} setCurrent={this.setCurrent}/>} />
             <Route path="/resources" component={Resources} />
+            <Route path="/new_project" component={(props) => <NewProject {...props} addProject={this.addProject} />} />
             <Route path="/about" component={About} />
           </Switch>
           <Footer />

@@ -29,14 +29,18 @@ export default class ProjectsListPage extends Component {
     this.props.setEditState()
     const project = this.props.projects.find(project => project.id == id)
     this.props.setEditedProject(project)
-    // console.log(this.state)
   }
 
+  handleAdd = (event) => {
+    return this.props.history.push('/new_project/');
+    // <Link to="/new_project/" />
+  }
 
   render() {
     return (
       <div className="container">
-        <h1>List of Projects</h1>
+        <h1 id="list-of-projects">List of Projects</h1>
+        <button id="add-project" onClick={this.handleAdd}>Add Project!</button>
         <div className="card-container">
           {this.props.projects
             ? this.listProjects()

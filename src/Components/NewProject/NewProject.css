@@ -1,0 +1,36 @@
+.new-project {
+  position: relative;
+  grid-column: 3 / 8;
+  background: #DDDD;
+  grid-row: 3 / 7 ;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow:  4px 4px 8px #AAA9;
+}
+
+#project-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#description {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+#notes {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+#submit {
+  position: absolute;
+  margin-top: 320px;
+  margin-left: 40%;
+  width: 20%;
+}
