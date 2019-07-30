@@ -26,3 +26,7 @@ h1 {
   grid-column: 4 / 7;
   text-align: center;
 }
+
+input[type="submit"]:hover, input[type="text"]:hover, button:hover {
+  transform: scale(1.02);
+}

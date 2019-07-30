@@ -14,11 +14,11 @@ export default class Login extends Component {
         <form id="login" onSubmit={this.submitHandler}>
           <div className="field">
             <label htmlFor="username">Username: </label>
-            <input type="text" name="username" />
+            <input type="text" name="username" required />
           </div>
           <div className="field">
             <label htmlFor="password">Password: </label>
-            <input type="text" name="password" />
+            <input type="text" name="password" required />
           </div>
           <div className="field">
             <input type="submit" id="login-submit" />

@@ -8,6 +8,8 @@ export default function Welcome(props) {
     return (project.current === true)
   })
 
+  const cutDescription = currentProject.description.replace(/^(.{150}[^\s]*).*/, "$1")
+
   return(
     <div className="container">
       <div id="capstone-welcome">
@@ -22,7 +24,7 @@ export default function Welcome(props) {
             pathname: `/projects/${currentProject.id}`,
             state: {project: currentProject, items: props.items}
           }}>Open Project</Link>
-          <p>{currentProject.description}</p>
+          <p>{cutDescription}...</p>
         </div>
       </div>
     </div>

@@ -20,8 +20,8 @@ export default class Project extends Component {
   }
 
   editNotes = (newNotes) => {
-    const putUrl = url + "/projects/" + this.state.project.id
-    fetch(putUrl, {
+    const projectUrl = url + "/projects/" + newNotes.id
+    fetch(projectUrl, {
       method: "PUT",
       headers: {
         'Content-Type': 'application/json'
@@ -29,7 +29,7 @@ export default class Project extends Component {
       body: JSON.stringify(newNotes)
     })
       .then(response => response.json())
-      .then(this.fetchData)
+      .then(this.props.fetchData)
   }
 
   handleEdit = (event) => {
@@ -45,21 +45,25 @@ export default class Project extends Component {
     // description.appendChild(changeButton)
   }
 
+  handleDelete = (event) => {
+    const projectUrl = url + "/projects/" + this.state.project.id
+    fetch(projectUrl, {method: "DELETE"})
+      .then(this.props.fetchData)
+    return this.props.history.push('/home/');
+  }
+
   additionalNotes = ""
 
   handleChange = (event) => {
     this.additionalNotes = event.target.value
   }
 
-  handleSubmit = (event) => {
+  handleNotesSubmit = (event) => {
     event.preventDefault();
-    // let projectDescription = {...this.state.project}
-    // console.log(projectDescription.description)
-    // projectDescription.description = this.additionalNotes
-    // console.log(projectDescription.description)
-    // this.setState({projectDescription})
-    this.setState({ project: { ...this.state.project, description: this.additionalNotes} });
-    console.log(this.state.project)
+    this.setState({ project: { ...this.state.project, features: this.additionalNotes} });
+    let newNotes = this.state.project
+    console.log(newNotes)
+    this.editNotes(newNotes);
   }
 
   render() {
@@ -84,12 +88,12 @@ export default class Project extends Component {
         }
         <div className="notes">
           <h3>Additional Notes</h3>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleNotesSubmit}>
             <textarea placeholder={this.state.project.features} onChange={this.handleChange} />
             <input type="submit" value="Save Notes" />
           </form>
         </div>
-        <button className="delete-project">Delete This Project</button>
+        <button className="delete-project" onClick={this.handleDelete}>Delete This Project</button>
       </div>
     )
   }
