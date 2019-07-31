@@ -43,6 +43,13 @@ For frontend:
 - Make sure you have npm installed: https://www.npmjs.com/get-npm
 - Start npm server: npm start
 
+## Built With
+
+React.js - https://reactjs.org/
+Ruby-on-Rails - https://rubyonrails.org/
+Atom - https://atom.io/
+VS Code - https://code.visualstudio.com/
+
 ## Contributing
 This project is not open to outside contribution at this time, although if you want to fork, clone, and download to tinker with it yourself feel free to do so.
 
