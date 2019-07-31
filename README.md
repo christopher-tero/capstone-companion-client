@@ -18,8 +18,9 @@ In Capstone companion a user can:
 ## Installation and Usage
 
 The backend for this project can be found at:
-https://github.com/christopher-tero/capstone_companion_temp_backend (Ruby-on-Rails 5 backend option)
-https://github.com/christopher-tero/Capstone_Companion_NET_Backend (ASP.NET core 2.2 backend option)
+
+- https://github.com/christopher-tero/capstone_companion_temp_backend (Ruby-on-Rails 5 backend option)
+- https://github.com/christopher-tero/Capstone_Companion_NET_Backend (ASP.NET core 2.2 backend option)
 
 It is recommended the user creates a new directory in which to download and run this file (ex. mkdir CapstoneCompanionApp).
 - Navigate into directory for app
