@@ -44,6 +44,8 @@ For frontend:
 - Make sure you have npm installed: https://www.npmjs.com/get-npm
 - Start npm server: npm start
 
+Note: If using the Rails backend you must start it BEFORE running npm start on the frontend and ensure the backend route is http://localhost:3000 and the frontend route is http://localhost:3001.
+
 ## Built With
 
 - React.js - https://reactjs.org/
