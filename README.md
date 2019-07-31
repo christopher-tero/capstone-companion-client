@@ -8,10 +8,10 @@
 Capstone Companion is a React front-end, Ruby-on-Rails (changing to .NET core) back-end CRUD app that allows a user to keep track of their coding projects!
 
 In Capstone companion a user can:
-- Create new projects with a title, description, and any additional notes for the project.
+- Create new projects with a title, description, and any additional notes for the project
 - View all projects in progress
 - Edit notes on any project for later reference
-- Check of completed tasks to track progress on a project
+- Check off completed tasks to track progress on a project
 - Delete any finished or abandoned projects
 - Have a handy list of key resources to help while coding projects
 
