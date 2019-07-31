@@ -4,9 +4,6 @@ import '../../App.css'
 import './Project.css'
 
 export default class ProjectsListPage extends Component {
-  constructor(props) {
-    super(props)
-  }
 
   listProjects = () => this.props.projects.map((project) => {
     return <ProjectCard
@@ -27,7 +24,7 @@ export default class ProjectsListPage extends Component {
 
   handleEdit = (id) => {
     this.props.setEditState()
-    const project = this.props.projects.find(project => project.id == id)
+    const project = this.props.projects.find(project => project.id === id)
     this.props.setEditedProject(project)
   }
 

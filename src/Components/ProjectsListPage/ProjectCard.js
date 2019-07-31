@@ -6,7 +6,6 @@ export default function ProjectCard(props) {
   const cutDescription = props.description.replace(/^(.{90}[^\s]*).*/, "$1")
   const thisProject = props.project
   const thisItems = props.items
-  const deleteClick = props.deleteClick
   return (
     <div className="project-card">
       <h4>{props.title}</h4>

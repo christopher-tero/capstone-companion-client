@@ -5,7 +5,7 @@ import './Header.css'
 export default function Project() {
   return (
     <nav className="header">
-      <h4 className="logo">Capstone Companion</h4>
+      <h4 className="nav-logo logo">Capstone Companion</h4>
       <div className="nav-links">
         <span><Link to="/home">Home</Link></span>
         <span><Link to="/projects/">Projects</Link></span>

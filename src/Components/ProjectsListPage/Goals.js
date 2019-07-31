@@ -1,28 +1,31 @@
 import React from 'react'
 
 export default function Goals(props) {
-  const allItems = props.items
-  console.log(allItems)
-  if (allItems !== {}) {
-    // props.items.forEach((item) => {
-    //   console.log(item.project_id)
-    // })
-  }
-  // console.log(projectGoals)
-
   let completed = 0;
+
   let setPercent = (event) => {
     let compPercent = document.getElementById("completed-percent")
     if (document.getElementById(event.target.id).checked) {
       completed += 20
       compPercent.innerText = `Completed: ${completed}%`
-      console.log(completed)
     } else {
       completed -= 20
       compPercent.innerText = `Completed: ${completed}%`
-      console.log(completed)
     }
   }
+
+// ----- UPCOMING FEATURE TO LIST/ADD/DELETE ITEMS FROM DB ----->
+  // const listItems = props.items.map((item) => {
+  //   if (item.project_id === props.project.id) {
+  //     console.log(true)
+  //     return (
+  //       <div key={item.id} >
+  //         <input id={item.id} type="checkbox" name={item.id} onClick={setPercent}/>
+  //         <label htmlFor={item.id}>{item.description}</label>
+  //       </div>
+  //     )
+  //   } else console.log(false)
+  // })
 
   return(
     <div className="goals-checklist">
@@ -39,6 +42,7 @@ export default function Goals(props) {
         <label htmlFor="item-4">Set up basic front end client</label></div>
         <div><input id="5" type="checkbox" name="item-5" onClick={setPercent}/>
         <label htmlFor="item-5">Get fetches to api working for client</label></div>
+        {/*{listItems}*/}
       </form>
     </div>
   )

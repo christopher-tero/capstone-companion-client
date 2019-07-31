@@ -38,13 +38,13 @@ export default class App extends Component {
   // <Route path="/projects" exact component={this.state.items ? (this.state.projects ? (props) => <ProjectsListPage {...props} projects={this.state.projects} items={this.state.items} fetchData={this.fetchData} /> : "") : ""} />
 
   deleteProject = (id) => {
-    const filteredProjects = this.state.projects.filter(project => project.id != id)
+    const filteredProjects = this.state.projects.filter(project => project.id !== id)
     this.setState({projects: filteredProjects})
     fetch(url + "projects/" + id, {method: "DELETE"})
+      .catch(error => console.error(error))
   }
 
   editProject = (editedProject) => {
-    console.log(editedProject.id)
     const id = editedProject.id
     fetch(url + `projects/${id}`, {
       method: "PUT",
@@ -54,7 +54,7 @@ export default class App extends Component {
       body: JSON.stringify(editedProject)
     })
       .then(response => response.json())
-      .then(this.fetchData)
+      .catch(error => console.error(error))
   }
 
   setEditedProject = (project) => {
@@ -73,14 +73,15 @@ export default class App extends Component {
     .then(this.fetchData)
   }
 
-  setCurrent = (id) => {
-    const notCurrent = this.state.projects.filter((project) => {
-      return (project.id != id)
-    })
-    notCurrent.map((project) => {
-      this.setState({ project: { ...this.state.project, current: false} })
-    })
-  }
+// ----- FUTURE FEATURE TO BE ABLE TO CHANGE CURRENT PROJECT ----- //
+  // setCurrent = (id) => {
+  //   const notCurrent = this.state.projects.filter((project) => {
+  //     return (project.id !== id)
+  //   })
+  //   notCurrent.map((project) => {
+  //     this.setState({ project: { ...this.state.project, current: false} })
+  //   })
+  // }
 
   render() {
     return (
@@ -89,19 +90,21 @@ export default class App extends Component {
           <Header />
           <Switch className="pages">
             <Route path="/" exact component={Login} />
-            <Route path="/home" exact component={this.state.projects ? (this.state.items ? (props) => <Welcome {...props} projects={this.state.projects} items={this.state.items} fetchData={this.fetchData} /> : "") : ""} />
+            <Route path="/home" exact component={this.state.projects ? (this.state.items ? (props) => <Welcome {...props}
+              projects={this.state.projects}
+              items={this.state.items}
+              fetchData={this.fetchData} /> : "") : ""} />
             <Route path="/projects" exact component={(props) => <ProjectsListPage {...props}
-                projects={this.state.projects}
-                items={this.state.items}
-                delete={this.deleteProject}
-                addProject={this.addProject}
-                editProject={this.editProject}
-                editView={this.state.editProjectView}
-                setEditState={this.setEditState}
-                setEditedProject={this.setEditedProject}
-                editedProject={this.state.editedProject}
-              />} />
-            <Route path="/projects/:id" component={(props) => <Project {...props} deleteProject={this.deleteProject} editProject={this.editProject} setCurrent={this.setCurrent}/>} />
+              projects={this.state.projects}
+              items={this.state.items}
+              addProject={this.addProject} />}
+            />
+            <Route path="/projects/:id" component={this.state.items ? (this.state.projects ? (props) => <Project {...props}
+              items={this.state.items}
+              deleteProject={this.deleteProject}
+              editProject={this.editProject}
+              setCurrent={this.setCurrent}/> : "") : ""}
+            />
             <Route path="/resources" component={Resources} />
             <Route path="/new_project" component={(props) => <NewProject {...props} addProject={this.addProject} />} />
             <Route path="/about" component={About} />

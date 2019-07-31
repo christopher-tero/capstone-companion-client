@@ -6,6 +6,9 @@
   height: 500px;
   border-radius: 5px;
   box-shadow:  4px 4px 8px #AAA9;
+  color: black;
+  text-shadow: none;
+  overflow-y: hidden;
 }
 
 #project-title {
@@ -21,6 +24,10 @@
   width: 80%;
 }
 
+#description-text {
+  height: 100px;
+}
+
 #notes {
   position: absolute;
   margin-top: 180px;
@@ -28,9 +35,23 @@
   width: 80%;
 }
 
+#notes-text {
+  height: 100px;
+}
+
 #submit {
+  border: none;
   position: absolute;
   margin-top: 320px;
   margin-left: 40%;
   width: 20%;
+  height: 3rem;
+  border-radius: 5px;
+  font-size: 20pt;
+  border: 2px outset #DDD;
+}
+
+#submit:active {
+  border: 2px inset #DDD;
+  transform: scale(1.05);
 }

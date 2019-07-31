@@ -1,13 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Alfa+Slab+One|Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Saira+Stencil+One&display=swap');
 
 /* font-family: 'Alfa Slab One', cursive; */
 /* font-family: 'Roboto', sans-serif; */
+/* font-family: 'Saira Stencil One', cursive; */
 
 body {
   background: #EEE;
   background-image: url("./images/claudiu-pusuc-PsZ_HXOCLIs-unsplash.jpg");
   background-size: cover;
   font-family: 'Roboto', sans-serif;
+  color: white;
+  text-shadow: 1px 1px 1px black,
+    -1px -1px 1px black,
+    1px -1px 1px black,
+    -1px 1px 1px black;
 }
 
 .pages {
@@ -17,8 +24,17 @@ body {
 .container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  grid-template-rows: repeat(auto-fill, 10%);
+  grid-template-rows: repeat(auto-fill, 4rem);
   margin-top: 3rem;
+}
+
+.logo {
+  font-family: 'Saira Stencil One', cursive;
+  color: white;
+  text-shadow: 1px 1px 1px black,
+    -1px -1px 1px black,
+    1px -1px 1px black,
+    -1px 1px 1px black;
 }
 
 h1 {

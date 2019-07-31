@@ -13,8 +13,13 @@ export default function Welcome(props) {
   return(
     <div className="container">
       <div id="capstone-welcome">
-        <h1>Welcome to Capstone Companion!</h1>
+        <h1>Welcome to <div className="logo">Capstone Companion!</div></h1>
         <p>Let us help you as you build your projects!</p>
+        <ul>
+          <li>Create new projects</li>
+          <li>Track progress</li>
+          <li>Take notes on new ideas</li>
+        </ul>
       </div>
       <div className="current-project">
         <h2>Current Project:</h2>

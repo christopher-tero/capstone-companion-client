@@ -43,15 +43,15 @@ export default class NewProject extends Component {
           <h1>Create a New Project!</h1>
           <div id="project-title">
             <label htmlFor="title">Project Title: </label>
-            <input type="text" name="title" onChange={this.handleTitle}/>
+            <input type="text" name="title" onChange={this.handleTitle} required/>
           </div>
           <div id="description">
             <label htmlFor="description">Description:</label>
-            <textarea name="description" id="description-text" onChange={this.handleDescription}/>
+            <textarea name="description" id="description-text" onChange={this.handleDescription} required/>
           </div>
           <div id="notes">
             <label htmlFor="notes">Additional Notes</label>
-            <textarea name="notes" id="notes-text" onChange={this.handleNotes}/>
+            <textarea name="notes" id="notes-text" onChange={this.handleNotes} required/>
           </div>
           <input type="submit" id="submit" />
         </form>

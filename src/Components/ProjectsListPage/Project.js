@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import Goals from './Goals'
 import './Project.css'
-const url = "http://localhost:3000/"
 
 export default class Project extends Component {
   constructor(props) {
@@ -19,19 +18,6 @@ export default class Project extends Component {
     this.setState(() => ({items: items}))
   }
 
-  editNotes = (newNotes) => {
-    const projectUrl = url + "/projects/" + newNotes.id
-    fetch(projectUrl, {
-      method: "PUT",
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(newNotes)
-    })
-      .then(response => response.json())
-      .then(this.props.fetchData)
-  }
-
   handleDelete = (event) => {
     this.props.deleteProject(this.state.project.id)
     return this.props.history.push('/projects/');
@@ -40,7 +26,6 @@ export default class Project extends Component {
   handleChange = (event) => {
     let additionalNotes = event.target.value
     this.setState({ project: { ...this.state.project, features: additionalNotes} })
-    console.log(additionalNotes)
   }
 
   handleNotesSubmit = (event) => {
@@ -49,13 +34,15 @@ export default class Project extends Component {
     this.props.editProject(editProject)
   }
 
-  handleCurrent = (event) => {
-    this.setState({ project: { ...this.state.project, current: true} })
-    console.log(this.state.project.current)
-    this.props.setCurrent(this.state.project.id)
-  }
+// ----- WORKING ON FEATURE ----- //
+  // handleCurrent = (event) => {
+  //   this.setState({ project: { ...this.state.project, current: true} })
+  //   console.log(this.state.project.current)
+  //   this.props.setCurrent(this.state.project.id)
+  // }
 
   render() {
+    // console.log(this.state.items)
     return (
       <div className="container project">
         <h1 className="title">
@@ -69,14 +56,14 @@ export default class Project extends Component {
             {/*<button id="set-current" onClick={this.handleCurrent}>Set to Current Project</button>*/}
           </div>
         </div>
-        { this.state.items
-          ? (this.state.project ? <Goals items={this.state.items} project={this.state.project}/> : "")
+        { this.state.project
+          ? (this.state.project ? <Goals items={this.props.items} project={this.state.project}/> : "")
           : ""
         }
         <div className="notes">
           <h3>Additional Notes</h3>
           <form onSubmit={this.handleNotesSubmit}>
-            <textarea placeholder={this.state.project.features} onChange={this.handleChange} />
+            <textarea value={this.state.project.features} onChange={this.handleChange} />
             <input type="submit" value="Save Notes" />
           </form>
         </div>
