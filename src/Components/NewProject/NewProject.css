@@ -1,0 +1,57 @@
+.new-project {
+  position: relative;
+  grid-column: 3 / 8;
+  background: #DDDD;
+  grid-row: 3 / 7 ;
+  height: 500px;
+  border-radius: 5px;
+  box-shadow:  4px 4px 8px #AAA9;
+  color: black;
+  text-shadow: none;
+  overflow-y: hidden;
+}
+
+#project-title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+}
+
+#description {
+  position: absolute;
+  margin-top: 40px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+#description-text {
+  height: 100px;
+}
+
+#notes {
+  position: absolute;
+  margin-top: 180px;
+  margin-left: 10%;
+  width: 80%;
+}
+
+#notes-text {
+  height: 100px;
+}
+
+#submit {
+  border: none;
+  position: absolute;
+  margin-top: 320px;
+  margin-left: 40%;
+  width: 20%;
+  height: 3rem;
+  border-radius: 5px;
+  font-size: 20pt;
+  border: 2px outset #DDD;
+}
+
+#submit:active {
+  border: 2px inset #DDD;
+  transform: scale(1.05);
+}

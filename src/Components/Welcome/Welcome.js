@@ -1,18 +1,25 @@
-import React, {Component} from 'react'
+import React from 'react'
 import '../../App.css'
 import './Welcome.css'
-import { BrowserRouter as Router, Route, Switch, Redirect, Link } from "react-router-dom";
+import { BrowserRouter as Route, Link } from "react-router-dom";
 
 export default function Welcome(props) {
   const currentProject = props.projects.find((project) => {
     return (project.current === true)
   })
 
+  const cutDescription = currentProject.description.replace(/^(.{150}[^\s]*).*/, "$1")
+
   return(
     <div className="container">
       <div id="capstone-welcome">
-        <h1>Welcome to Capstone Companion!</h1>
+        <h1>Welcome to <div className="logo">Capstone Companion!</div></h1>
         <p>Let us help you as you build your projects!</p>
+        <ul>
+          <li>Create new projects</li>
+          <li>Track progress</li>
+          <li>Take notes on new ideas</li>
+        </ul>
       </div>
       <div className="current-project">
         <h2>Current Project:</h2>
@@ -20,9 +27,9 @@ export default function Welcome(props) {
           <h3>{currentProject.title}</h3>
           <Link to={{
             pathname: `/projects/${currentProject.id}`,
-            state: {project: currentProject}
+            state: {project: currentProject, items: props.items}
           }}>Open Project</Link>
-          <p>{currentProject.description}</p>
+          <p>{cutDescription}...</p>
         </div>
       </div>
     </div>

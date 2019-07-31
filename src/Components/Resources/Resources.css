@@ -8,6 +8,7 @@ h3 {
   grid-row-start: 4;
   grid-column: 3 / 8;
   text-align: left;
+  font-size: 14pt;
 }
 
 p {

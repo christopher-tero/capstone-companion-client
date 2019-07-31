@@ -3,4 +3,9 @@
   grid-row-start: 3;
   grid-column: 2 / 8;
   text-align: center;
+  font-size: 14pt;
+}
+
+ul {
+  text-align: left;
 }
