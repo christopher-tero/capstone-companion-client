@@ -54,6 +54,7 @@ export default class App extends Component {
       body: JSON.stringify(editedProject)
     })
       .then(response => response.json())
+      .then(this.fetchData)
       .catch(error => console.error(error))
   }
 
@@ -94,10 +95,10 @@ export default class App extends Component {
               projects={this.state.projects}
               items={this.state.items}
               fetchData={this.fetchData} /> : "") : ""} />
-            <Route path="/projects" exact component={(props) => <ProjectsListPage {...props}
+            <Route path="/projects" exact component={this.state.projects ? (props) => <ProjectsListPage {...props}
               projects={this.state.projects}
               items={this.state.items}
-              addProject={this.addProject} />}
+              addProject={this.addProject} /> : ""}
             />
             <Route path="/projects/:id" component={this.state.items ? (this.state.projects ? (props) => <Project {...props}
               items={this.state.items}

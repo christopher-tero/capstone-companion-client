@@ -5,7 +5,9 @@ import './Project.css'
 
 export default class ProjectsListPage extends Component {
 
-  listProjects = () => this.props.projects.map((project) => {
+  sortProjects = this.props.projects.sort((a, b) => a.id - b.id)
+
+  listProjects = () => this.sortProjects.map((project) => {
     return <ProjectCard
       key={project.id}
       title={project.title}
