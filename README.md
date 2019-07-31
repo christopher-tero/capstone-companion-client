@@ -1,5 +1,10 @@
 # CAPSTONE COMPANION
 
+<img src="./src/images/Screen Shot 2019-07-31 at 4.00.39 PM.png" alt="Welcome Screen" width="840">
+<img src="./src/images/Screen Shot 2019-07-31 at 4.01.01 PM.png" alt="List Projects" width="840">
+<img src="./src/images/Screen Shot 2019-07-31 at 4.01.36 PM.png" alt="Project Details" width="840">
+<img src="./src/images/Screen Shot 2019-07-31 at 4.03.24 PM.png" alt="New Project" width="840">
+
 Capstone Companion is a React front-end, Ruby-on-Rails (changing to .NET core) back-end CRUD app that allows a user to keep track of their coding projects!
 
 In Capstone companion a user can:
@@ -41,7 +46,7 @@ For frontend:
 ## Contributing
 This project is not open to outside contribution at this time, although if you want to fork, clone, and download to tinker with it yourself feel free to do so.
 
-##Author
+## Author
 Christopher Tero
 
 ## License
