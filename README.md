@@ -46,6 +46,16 @@ For frontend:
 
 Note: If using the Rails backend you must start it BEFORE running npm start on the frontend and ensure the backend route is http://localhost:3000 and the frontend route is http://localhost:3001.
 
+Enter http://localhost:3001 (if using Rails) or http://localhost:3000 (if using .NET) in the url to begin using Capstone Companion!
+- Login with "username" and "password" as username and password
+- Use the navbar to navigate to the different pages, or click on "About Us" at the bottom of the page to learn more about Capstone Companion
+- Add a new project with "Add Project" button on the projects list page
+- Click on "Open Project" link on any project to go to the project
+- Delete any project using the delete key on the project page
+- Edit notes for the project
+- Check off completed tasks and see progress on the project
+- Check out the resources page for some valuable coding resources
+
 ## Built With
 
 - React.js - https://reactjs.org/
