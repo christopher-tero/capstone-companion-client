@@ -1,3 +1,31 @@
+# CAPSTONE COMPANION
+
+Capstone Companion is a React front-end, Ruby-on-Rails (changing to .NET core) back-end CRUD app that allows a user to keep track of their coding projects!
+
+In Capstone companion a user can:
+- Create new projects with a title, description, and any additional notes for the project.
+- View all projects in progress
+- Edit notes on any project for later reference
+- Check of completed tasks to track progress on a project
+- Delete any finished or abandoned projects
+- Have a handy list of key resources to help while coding projects
+
+## Installation and Usage
+
+No install necessary; visit this site at: https://scoreit-chess-app.herokuapp.com/
+
+## Contributing
+This project is not open to outside contribution at this time, although if you want to fork, clone, and download to tinker with it yourself feel free to do so.
+
+##Author
+Christopher Tero
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+
+-------------------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
