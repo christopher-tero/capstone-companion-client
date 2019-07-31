@@ -12,7 +12,31 @@ In Capstone companion a user can:
 
 ## Installation and Usage
 
-No install necessary; visit this site at: https://scoreit-chess-app.herokuapp.com/
+The backend for this project can be found at:
+https://github.com/christopher-tero/capstone_companion_temp_backend (Ruby-on-Rails 5 backend option)
+https://github.com/christopher-tero/Capstone_Companion_NET_Backend (ASP.NET core 2.2 backend option)
+
+It is recommended the user creates a new directory in which to download and run this file (ex. mkdir CapstoneCompanionApp).
+- Navigate into directory for app
+
+For Rails backend:
+- Copy project to clipboard from github
+- Clone project to app directory using "git clone <link from clipboard>"
+- Navigate into folder: cd capstone_companion_temp_backend
+- Start Rails server: Rails s
+
+For .NET backend:
+- Copy project to clipboard from github
+- Clone project to app directory using "git clone <link from clipboard>"
+- Navigate into folder: cd capstone_companion_net_backend
+- Start .NET server: dotnet run
+
+For frontend:
+- Copy project to clipboard from github
+- Clone project to app directory using "git clone <link from clipboard>"
+- Navigate into folder: cd capstone-companion-frontend
+- Make sure you have npm installed: https://www.npmjs.com/get-npm
+- Start npm server: npm start
 
 ## Contributing
 This project is not open to outside contribution at this time, although if you want to fork, clone, and download to tinker with it yourself feel free to do so.
